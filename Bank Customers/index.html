@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Customers</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="d-flex justify-content-center my-3">
+        <button class="btn btn-success" type="button" id='addNewButton'>Add New customer</button>
+    </div>
+    <form class="form" id="addNewCustomer">
+        <div class="container d-none" id="addCustomerContainer">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Enter customer name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label>Balance</label>
+            <input type="text" class="form-control" placeholder="Enter balance" name="balance" required>
+          </div>
+          <div class="d-flex justify-content-center my-3">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+    </form>
+    <div class="container justify-content-center my-3 form-group">
+      <label style="color: white;">search</label>
+      <input type="text" class="form-control" id="search" placeholder="Enter account number to search">
+    </div>
+    <table class="table table-bordered table-hover ">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Account Number</th>
+            <th scope="col">Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>500</td>
+            <td>
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control balance" placeholder="Amount to Add Or withdraw">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="button">Add</button>
+                        <button class="btn btn-warning" type="button">withdraw</button>
+                    </div>
+                </div>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <input type="text" hidden id="index">
+            <div class="form-group">
+                <label >Customer name</label>
+                <input type="text" class="form-control" readonly id="modalCustomer">
+              </div>
+              <div class="form-group">
+                <label >Account balance</label>
+                <input type="text" class="form-control" readonly id="modalAccount">
+              </div>
+              <div class="form-group">
+                <label >Amount</label>
+                <input type="text" class="form-control" placeholder="Enter Amout to add or Withdraw" id='modalchange'>
+              </div>
+              <div class="d-flex justify-content-center my-3">
+                <button class="btn btn-success" type="button" id='addAmount'>Add</button>
+                <button class="btn btn-warning mx-2" type="button" id='withdrawAmount'>Withdraw</button>
+                <button class="btn btn-danger mx-2" type="button" id='delete'>Delete Customer</button>
+            </div>
+        </div>
+      
+      </div>
+    <script src="src.js"></script>
+    
+</body>
+</html>
